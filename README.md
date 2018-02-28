@@ -1,5 +1,5 @@
 
-#Install 
+# Install 
 
 ```
 git clone https://github.com/jeffer-mendoza/golang-challenge.git
@@ -10,7 +10,7 @@ go get github.com/goenning/go-cache-demo/cache/redis
 go get github.com/prometheus/client_golang/prometheus/promhttp
 ```
 
-#Config
+# Config
 
 Create a file in project -> conf.yml
 
@@ -24,14 +24,14 @@ cachetime: "cache time"
 serveport: "serve port"
 ```
 
-#Resources
+# Resources
 
 [**Server side cache with Go**](https://goenning.net/2017/03/18/server-side-cache-go/)
 
 
-#Resource Monitoring Tool
+# Resource Monitoring Tool
 
-##Prometheus
+## Prometheus
 
 1. Download  [The Prometheus monitoring system](https://prometheus.io/download/)
 2. Unzip the file downloaded
