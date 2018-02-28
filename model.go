@@ -1,8 +1,9 @@
 package main
 
 type Room struct {
-	Name        string
-	PricePerDay int
+	Id   int
+	name string
+	price float64
 }
 
 type Hotel struct {
@@ -20,4 +21,10 @@ type HotelContinent struct {
 	Id int
 	Hotel Hotel
 	Continent Continent
+}
+
+type HotelRoom struct{
+	Id int
+	Hotel Hotel
+	Room Room
 }

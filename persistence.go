@@ -81,3 +81,39 @@ func FindAllHotelsContinent() map[int][]HotelContinent{
 	}
 	return hotelsContinent
 }
+
+func FindAllHotelsRoom() map[int][]HotelRoom{
+	db, _ := connection()
+	var (
+		id int
+		hotelId int
+		hotel string
+		roomId int
+		room string
+		price float64
+	)
+	rows, err := db.Query(`select hr.id, h.id, h.name, r.id,  r.name, r.price
+		                   from hotel_room hr
+		                   INNER JOIN hotel h ON h.id = hr.hotel
+		                   INNER JOIN room r on r.id = hr.room`)
+	db.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+	hotelsRoom := make(map[int][]HotelRoom)
+	for rows.Next() {
+		err := rows.Scan(&id, &hotelId, &hotel, &roomId, &room, &price)
+		if err != nil {
+			log.Fatal(err)
+		}
+		hotelsRoom[id] = append(hotelsRoom[id], HotelRoom{id,
+			 Hotel{hotelId, hotel, nil}, 
+			 Room{roomId, room, price}})
+	}
+	err = rows.Err()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return hotelsRoom
+}

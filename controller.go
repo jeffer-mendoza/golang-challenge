@@ -36,3 +36,17 @@ func hotelsContinent(response http.ResponseWriter, request *http.Request){
 	response.Header().Set("Content-Type", "application/json")
 	response.Write(result)
 }
+
+/**
+get hotels with continent
+**/
+func hotelsRooms(response http.ResponseWriter, request *http.Request){
+	hotelsRoom := FindAllHotelsRoom()
+	result, err := json.Marshal(hotelsRoom)
+	if err != nil {
+		http.Error(response, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	response.Header().Set("Content-Type", "application/json")
+	response.Write(result)
+}
