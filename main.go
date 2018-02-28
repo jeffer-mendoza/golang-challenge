@@ -34,6 +34,5 @@ func init() {
 func main() {
     config.getConf()
 	loadRoutes()
-	
-	http.ListenAndServe(":9003", nil)
+	http.ListenAndServe(config.ServePort, nil)
 }
