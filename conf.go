@@ -13,8 +13,8 @@ type conf struct {
 	Port string
 	Name string
     Password string
-    CacheTime string
-    ServePort string
+    Cachetime string
+    Serveport string
 }
 
 

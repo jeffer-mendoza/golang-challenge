@@ -34,5 +34,5 @@ func init() {
 func main() {
     config.getConf()
 	loadRoutes()
-	http.ListenAndServe(config.ServePort, nil)
+	http.ListenAndServe(config.Serveport, nil)
 }
