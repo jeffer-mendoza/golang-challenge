@@ -3,12 +3,15 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 
     "github.com/goenning/go-cache-demo/cache"
 	"github.com/goenning/go-cache-demo/cache/memory"
 	"github.com/goenning/go-cache-demo/cache/redis"
+	
 )
 
 var storage cache.Storage
@@ -34,5 +37,5 @@ func init() {
 func main() {
     config.getConf()
 	loadRoutes()
-	http.ListenAndServe(config.Serveport, nil)
+	log.Println(http.ListenAndServe(config.Serveport, nil))
 }
