@@ -31,31 +31,9 @@ serveport: "serve port"
 
 # Resource Monitoring Tool
 
-## Prometheus
-
-1. Download  [The Prometheus monitoring system](https://prometheus.io/download/)
-2. Unzip the file downloaded
-3. Create the config.yml configuration file and save it in Prometheus project's root 
-
-``` 
-    # my global config
-    global:
-    scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-    evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
-
-    scrape_configs:
-    - job_name: 'golang'
-        metrics_path: /metrics
-        static_configs:
-        - targets: ['localhost:9005']
-```
-4. Execute Prometheus
-``` 
-    ./prometheus --config.file=config.yml
-``` 
-5. Open Prometheus web application in the web browser at the address: [http://localhost:9090](http://localhost:9090)
 
 ## Pprof
+
 https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/
 https://golang.org/pkg/net/http/pprof/
 https://github.com/google/pprof
@@ -100,17 +78,21 @@ reports:
 
 3. Generate reports(text, images):
 
+text report
 ```
 (pprof)top
 ```
+image report -> if you want generate images files sudo apt install python-pydot python-pydot-ng graphviz
+
 ```
 (pprof)png
 ```
 
-
-
-if you want generate images files
-
+html report
 ```
- sudo apt install python-pydot python-pydot-ng graphviz
+(pprof)web
 ```
+
+
+
+
