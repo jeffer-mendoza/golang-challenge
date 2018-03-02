@@ -34,9 +34,9 @@ serveport: "serve port"
 
 ## Pprof
 
-https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/
-https://golang.org/pkg/net/http/pprof/
-https://github.com/google/pprof
+*https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/
+*https://golang.org/pkg/net/http/pprof/
+*https://github.com/google/pprof
 
 
 1. import _ "net/http/pprof" in the main file
@@ -46,11 +46,11 @@ https://github.com/google/pprof
 
 Each Profile has a unique name. A few profiles are predefined:
 
-goroutine    - stack traces of all current goroutines
-heap         - a sampling of all heap allocations
-threadcreate - stack traces that led to the creation of new OS threads
-block        - stack traces that led to blocking on synchronization primitives
-mutex        - stack traces of holders of contended mutexes
+*goroutine    - stack traces of all current goroutines
+*heap         - a sampling of all heap allocations
+*threadcreate - stack traces that led to the creation of new OS threads
+*block        - stack traces that led to blocking on synchronization primitives
+*mutex        - stack traces of holders of contended mutexes
 
 
 goroutine profile
