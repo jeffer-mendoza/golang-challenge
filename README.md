@@ -38,8 +38,7 @@ serveport: "serve port"
 * https://golang.org/pkg/net/http/pprof/
 * https://github.com/google/pprof
 
-
-
+(![Pprof Diagram](http://url/to/img.png))
 
 1. import _ "net/http/pprof" in the main file
 
